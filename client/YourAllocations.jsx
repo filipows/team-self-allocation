@@ -1,4 +1,4 @@
-const noOfPrefs = 3;
+const noOfPrefs = 5;
 
 YourAllocations = React.createClass({
 
@@ -126,8 +126,10 @@ YourAllocations = React.createClass({
             { this.renderAllocationSelect('First', 0) }
             { this.renderAllocationSelect('Second', 1) }
             { this.renderAllocationSelect('Third', 2) }
+            { this.renderAllocationSelect('Fourth', 3) }
+            { this.renderAllocationSelect('Fifth', 4) }
 
-            <button 
+            <button
               className="btn btn-success" 
               disabled={!this.state.dirty || !this.state.isOk}
               >

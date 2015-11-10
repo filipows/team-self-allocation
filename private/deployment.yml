@@ -2,23 +2,23 @@
 - name: 'Removing previous version'
   file:
     state: absent
-    path: /opt/tsa-app/tsa-app
+    path: /opt/tsa-manila-app/tsa-manila-app
 
 - name: 'Unpacking build'
   unarchive:
-    dest: /opt/tsa-app/
+    dest: /opt/tsa-manila-app/
     src: ../.build/meteor.tar.bz2
 
 - name: 'Running NPM install'
   npm:
-    path: /opt/tsa-app/tsa-app/programs/server
+    path: /opt/tsa-manila-app/tsa-manila-app/programs/server
 
 - name: 'Removing previous service'
-  command: 'pm2 delete tsa-app'
+  command: 'pm2 delete tsa-manila-app'
 
 - name: 'Runing service'
-  command: 'pm2 start --name tsa-app main.js'
+  command: 'pm2 start --name tsa-manila-app main.js'
   args:
-    chdir: /opt/tsa-app/tsa-app/
+    chdir: /opt/tsa-manila-app/tsa-manila-app/
 
 
